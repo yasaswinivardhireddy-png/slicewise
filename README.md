@@ -48,8 +48,11 @@ reproduces this table exactly; see the job summary of a [CI run](https://github.
 | Reduced motion and forced colors (Windows high contrast) | transitions off; focus outline kept |
 
 **Engineering.** 36 Go tests (including a property test of the backfill guarantee over random
-workloads), 3 fuzz targets and the race detector; 25 Vitest tests; 7 Playwright tests; a container
-image smoke-tested in CI. Checking whether a slice is free takes constant time (see below).
+workloads), the race detector, and 3 fuzz targets that run for 60 s each in CI (about 3.5 million
+shape strings, 69,000 grid operation sequences and 29,000 scheduler operation sequences per run,
+with no failures); 25 Vitest tests; 7 Playwright tests; a container image smoke-tested in CI.
+Checking whether a slice is free takes constant time (see below), and finding the best-fit slice on
+a half-full 512-chip pod takes 19.8 µs (CI runner, AMD EPYC 7763).
 
 ## The console
 

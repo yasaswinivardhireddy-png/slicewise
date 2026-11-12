@@ -1,0 +1,15 @@
+# Build outputs
+/slicewise
+/slicewise.exe
+internal/webui/dist/*
+!internal/webui/dist/.gitkeep
+
+# Web
+web/node_modules/
+web/dist/
+web/playwright-report/
+web/test-results/
+
+# Misc
+*.log
+.DS_Store
